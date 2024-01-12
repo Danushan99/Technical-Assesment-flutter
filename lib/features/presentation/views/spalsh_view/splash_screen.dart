@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:technical_assesment/utils/app_colors.dart';
 import 'package:technical_assesment/utils/app_strings.dart';
 
+import '../../../../utils/navigation_routes.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -10,12 +12,10 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2)).then((value) {
-      // Navigator.pushNamedAndRemoveUntil(
-      //     context, Routes.kLoginView, (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, Routes.kSplashView, (route) => false);
     });
     super.initState();
   }
