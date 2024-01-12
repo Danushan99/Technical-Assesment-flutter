@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:technical_assesment/utils/app_colors.dart';
 
@@ -13,15 +14,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      color: AppColors.fontColorDarkBrown,
-      theme: ThemeData(
-        textTheme: GoogleFonts.robotoSerifTextTheme(),
-        scaffoldBackgroundColor: AppColors.colorBackground,
-        primaryColor: AppColors.colorPrimary,
-      ),
-      home: const SplashScreen(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(428, 926),
+        builder: (_, child) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            color: AppColors.fontColorDarkBrown,
+            theme: ThemeData(
+              textTheme: GoogleFonts.robotoSerifTextTheme(),
+              scaffoldBackgroundColor: AppColors.colorBackground,
+              primaryColor: AppColors.colorPrimary,
+            ),
+            home: child,
+          );
+        },
+        child: const SplashScreen());
   }
 }
