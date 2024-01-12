@@ -10,6 +10,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 2)).then((value) {
+      // Navigator.pushNamedAndRemoveUntil(
+      //     context, Routes.kLoginView, (route) => false);
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
